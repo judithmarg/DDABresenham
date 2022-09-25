@@ -16,17 +16,14 @@ def dda(x0,y0,x1,y1, grosor):
     for i in range(0, steps+grosor):    
         print('x = ',round(x), 'y = ', round(y))   
         blank[round(x-grosor/2):round(x+grosor/2), round(y-grosor/2):round(y+grosor/2)] = (0,255,10)
-        if xs == 1:
-            x += xs
-            y += grosor+ys
-        else:
-            x += grosor+xs 
-            y += ys 
+        
+        y += grosor+ys
+        x += grosor+xs 
     cv.imshow("Green", blank)
     cv.waitKey(0)
     
 def main():
-    dda(125,150,300,210,5)
+    dda(150,125,170,180,5)
 
 if __name__ == '__main__':
     main()
